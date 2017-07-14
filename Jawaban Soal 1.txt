@@ -1,0 +1,33 @@
+1. view group yang childnya dapat menggunakan android:layout_above:
+-	relative layout
+-	linier layout
+2. lifecycle pada sebuah activity:
+-	(Activity start),oncreate(),onStart(),onResume(),(Activity sedang running),activity baru memulai,onFreze(),onPause(),onPause(),onStop(),onDestroy,Activity shutdown
+3. letak activity pertamakali ditampilkan:
+- pada file AndroidManifest.xml
+- <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+4. perintah untuk berpindah activity
+-	Button go = (Button)findViewById(R.id.main_btnPage);
+ 
+        go.setOnClickListener(new View.OnClickListener() {
+ 
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent i = new Intent(Main.this, Child.class);
+                i.putExtra("pesan", "From Activity Main");
+                startActivity(i);
+            }
+-	sebuah button main_btnPage difungsi kan untuk mengganti tampilan activity main ke child activity
+
+5. access modifier, merupakan pengaturan hak akses user dalam sebuah aplikasi. yang terdiri dari 4 jenis yaitu:
+a. Akses Default adalah tipe yang hanya class dalam package yang sama yang memiliki hak akses terhadap variabel dan methods dalam class.
+b. Akses Public adalah class member untuk diakses baik dari dalam dan luar class. 
+c. Akses Private pengaksesan class hanya dapat diakses oleh class dimana tipe ini dibuat. 
+d. Akses Protected mengijinkan class member untuk diakses oleh method dalam class tersebut dan elemen – elemen subclass. 
